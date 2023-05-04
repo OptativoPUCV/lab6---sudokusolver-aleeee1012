@@ -34,7 +34,6 @@ Node* read_file (char* file_name)
       printf("failed to read data!");
     }
   }
-
   fclose (file);
   return n;
 }
@@ -53,20 +52,27 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
+  int num1, num2;
   
   for(int i = 0; i < 9; i++)
   {
-    if(n->sudo[0][i] == 0)
+    int fila[10] = {0,0,0,0,0,0,0,0,0,0};
+    int colu[10] = {0,0,0,0,0,0,0,0,0,0};
+    
+    for(int k = 0; k < 9; k++)
     {
-      if(n->sudo[0][i] == n->sudo[0][0]) return 0;  
-    }
-
-  }
-  for(int k = 0; k < 9; k++)
-  {
-    if(n->sudo[k][0] == 0)
-    {
-      if(n->sudo[k][0] == n->sudo[0][0]) return 0;  
+      num1 = n->sudo[i][k];
+      if(num1 != 0)
+      {
+        if(fila[num1] == 0)
+        {
+          fila[num1] = 1;
+        }
+        else
+        {
+          return 0;
+        }
+      }
     }
   }
 
