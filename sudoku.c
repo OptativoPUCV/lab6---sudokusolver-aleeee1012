@@ -61,11 +61,6 @@ int is_valid(Node* n)
   {
     if(n->sudo[k][0] == n->sudo[k][0])return 0;
   }
-  for(int p = 0; p < 9; p++)
-  {
-    int x = 3*(n/3) + (p/3);
-    int y = 3*(n%3) + (p%3);
-  }
   return 1;
 }
 
