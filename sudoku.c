@@ -62,7 +62,7 @@ int is_valid(Node* n)
       cont[n->sudo[i][k]]++;
     }
   }
-  for(int i = 0; i < 10; i++)
+  for(int i = 1; i < 10; i++)
   {
     if(cont[i] > 1) return 0;
   }
