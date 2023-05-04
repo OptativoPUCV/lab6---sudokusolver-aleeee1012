@@ -329,3 +329,20 @@ sudoku.c:65:11: error: comparison between pointer and integer [-Werror]
 cc1: all warnings being treated as errors
 Compilation failed
 fac202c
+Thu 04 May 2023 04:45:23 PM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:65:11: error: comparison between pointer and integer [-Werror]
+   65 |   if(cont > 1) return 0;
+      |           ^
+sudoku.c:62:22: error: iteration 9 invokes undefined behavior [-Werror=aggressive-loop-optimizations]
+   62 |       cont[n->sudo[i][k]]++;
+      |            ~~~~~~~~~~^~~
+sudoku.c:60:5: note: within this loop
+   60 |     for(int k = 0; k < 10; k++)
+      |     ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+e45f359
