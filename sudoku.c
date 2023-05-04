@@ -58,7 +58,7 @@ int is_valid(Node* n)
   {
     if(n->sudo[0][i] == 0)
     {
-      if(n->sudo[0][i] == n->sudo[0][0]) return 1;  
+      if(n->sudo[0][i] == n->sudo[0][0]) return 0;  
     }
 
   }
@@ -66,11 +66,11 @@ int is_valid(Node* n)
   {
     if(n->sudo[k][0] == 0)
     {
-      if(n->sudo[k][0] == n->sudo[0][0]) return 1;  
+      if(n->sudo[k][0] == n->sudo[0][0]) return 0;  
     }
   }
 
-  return 0;
+  return 1;
 }
 
 List* get_adj_nodes(Node* n)
