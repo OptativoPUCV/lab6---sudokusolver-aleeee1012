@@ -8,3 +8,17 @@ Thu 04 May 2023 03:40:48 AM UTC:
  tests:  0|5
 total_score: 0/70
 e93824b
+Thu 04 May 2023 03:56:42 AM UTC: 
+ sudoku.c | 21 +++++++++++++++++++--
+ 1 file changed, 19 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:68:27: error: multi-character character constant [-Werror=multichar]
+   68 |       if(n->sudo[i][k] == '/0')
+      |                           ^~~~
+sudoku.c:72:21: error: assignment to expression with array type
+   72 |         adj_n->sudo = n->sudo;
+      |                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+89f01c5
