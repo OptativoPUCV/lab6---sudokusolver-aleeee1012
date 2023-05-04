@@ -53,33 +53,35 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
+  for(i=0;i<9;i++)
+  {
+    for(j=0;j<9;j++)
+    {
+      
+    }
+  }
   return 1;
 }
 
 List* get_adj_nodes(Node* n)
 {
   List *list = createList();
-  int x;
-  int y;
-  
-  for(int i = 1; i <= 9; i++)
+
+  for(int i = 0; i < 9; i++)
   {
-    for(int k = 1; k <= 9; k++)
+    for(int k = 0; k < 9; k++)
     {
-      if(n->sudo[i][k] == 0)
+      if(n->sudo[i][j] == 0)
       {
-        x = i;   
-        y = k;
-        break;
+        for(int num = 1; num <= 9, num++)
+        {
+          Node *adjN = copy(n);
+          adjN->sudo[i][j] = num;
+          pushBack(list, adjN);
+        }
+        return list;
       }
     }
-  }
-  if(x > 0)
-  {
-    Node* up = copy(n);
-    up->sudo[x][y] = up->sudo[x-1][y];
-    up->sudo[x-1][y] = 0;
-    pushBack(list, up);
   }
   return list;
 }
