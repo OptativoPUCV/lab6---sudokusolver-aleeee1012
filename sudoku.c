@@ -52,12 +52,12 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
-  int num1;//num2;
+  int num1, num2;
   
   for(int i = 0; i < 9; i++)
   {
     int fila[10] = {0,0,0,0,0,0,0,0,0,0};
-    //int colu[10] = {0,0,0,0,0,0,0,0,0,0};
+    int colu[10] = {0,0,0,0,0,0,0,0,0,0};
     
     for(int k = 0; k < 9; k++)
     {
@@ -65,6 +65,16 @@ int is_valid(Node* n)
       if(num1 != 0)
       {
         if(fila[num1] == 0) fila[num1] = 1;
+          
+        else return 0;
+      }
+    }
+    for(int k = 0; k < 9; k++)
+    {
+      num2 = n->sudo[i][k];
+      if(num2 != 0)
+      {
+        if(colu[num2] == 0) colu[num2] = 1;
           
         else return 0;
       }
