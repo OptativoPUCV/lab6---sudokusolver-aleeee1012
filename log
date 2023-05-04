@@ -191,3 +191,14 @@ sudoku.c:84:8: error: comparison between pointer and integer [-Werror]
 cc1: all warnings being treated as errors
 Compilation failed
 be35393
+Thu 04 May 2023 04:23:26 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:84:8: error: comparison between pointer and integer [-Werror]
+   84 |   if(x < n - 1)
+      |        ^
+cc1: all warnings being treated as errors
+Compilation failed
+1b650df
