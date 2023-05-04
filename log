@@ -101,3 +101,9 @@ sudoku.c:73:23: error: assignment to expression with array type
       |                       ^
 Compilation failed
 c4b876c
+Thu 04 May 2023 04:06:51 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|5
+total_score: 0/70
+51835d5
