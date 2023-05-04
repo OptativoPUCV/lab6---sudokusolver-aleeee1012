@@ -346,3 +346,17 @@ sudoku.c:60:5: note: within this loop
 cc1: all warnings being treated as errors
 Compilation failed
 e45f359
+Thu 04 May 2023 04:46:28 PM UTC: 
+ sudoku.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+test.c: In function ‘is_valid’:
+sudoku.c:62:22: error: iteration 9 invokes undefined behavior [-Werror=aggressive-loop-optimizations]
+   62 |       cont[n->sudo[i][k]]++;
+      |            ~~~~~~~~~~^~~
+sudoku.c:60:5: note: within this loop
+   60 |     for(int k = 0; k < 10; k++)
+      |     ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+6fda62f
