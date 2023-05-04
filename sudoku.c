@@ -81,7 +81,7 @@ List* get_adj_nodes(Node* n)
     up->sudo[x-1][y] = 0;
     pushBack(list, up);
   }
-  if(x < n - 1)
+  if(x < (n - 1))
   {
     Node* dow = copy(n);
     dow->sudo[x][y] = dow->sudo[x+1][y];
