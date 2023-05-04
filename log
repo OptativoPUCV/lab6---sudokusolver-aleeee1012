@@ -309,3 +309,23 @@ sudoku.c:65:11: error: comparison between pointer and integer [-Werror]
 cc1: all warnings being treated as errors
 Compilation failed
 a20344a
+Thu 04 May 2023 04:44:43 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:56:18: error: invalid initializer
+   56 |   int cont[10] = '\0';
+      |                  ^~~~
+sudoku.c:58:20: error: comparison between pointer and integer [-Werror]
+   58 |   for(int i = 0; i < n; i++)
+      |                    ^
+sudoku.c:60:22: error: comparison between pointer and integer [-Werror]
+   60 |     for(int k = 0; k < n; k++)
+      |                      ^
+sudoku.c:65:11: error: comparison between pointer and integer [-Werror]
+   65 |   if(cont > 1) return 0;
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+fac202c
