@@ -74,11 +74,14 @@ List* get_adj_nodes(Node* n)
       }
     }
   }
-  Node* up = copy(n);
-  up->sudo[x][y] = up->sudo[x-1][y];
-  up->sudo[x-1][y] = 0;
-  pushBack(list, up);
-
+  if(x > 0)
+  {
+    Node* up = copy(n);
+    up->sudo[x][y] = up->sudo[x-1][y];
+    up->sudo[x-1][y] = 0;
+    pushBack(list, up);
+  }
+  
   if(y > 0)
   {
     Node* left = copy(n);
