@@ -392,3 +392,23 @@ Thu 04 May 2023 04:57:08 PM UTC:
  tests:  2|4
 total_score: 15/70
 05c67e6
+Thu 04 May 2023 05:00:37 PM UTC: 
+ sudoku.c | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:66:17: error: invalid operands to binary / (have ‘Node *’ and ‘int’)
+   66 |     int x = 3*(n/3) + (p/3);
+      |                 ^
+sudoku.c:67:17: error: invalid operands to binary % (have ‘Node *’ and ‘int’)
+   67 |     int y = 3*(n%3) + (p%3);
+      |                 ^
+sudoku.c:67:9: error: unused variable ‘y’ [-Werror=unused-variable]
+   67 |     int y = 3*(n%3) + (p%3);
+      |         ^
+sudoku.c:66:9: error: unused variable ‘x’ [-Werror=unused-variable]
+   66 |     int x = 3*(n/3) + (p/3);
+      |         ^
+cc1: all warnings being treated as errors
+Compilation failed
+f8611f6

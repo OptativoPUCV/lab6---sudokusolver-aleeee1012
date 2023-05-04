@@ -55,17 +55,16 @@ int is_valid(Node* n)
 {
   for(int i = 0; i < 9; i++)
   {
-    if(n->sudo[0][i] == n->sudo[0][0])
-    {
-      return 0;
-    }
+    if(n->sudo[0][i] == n->sudo[0][i])return 0;
   }
   for(int k = 0; k < 9; k++)
   {
-    if(n->sudo[k][0] == n->sudo[0][0])
-    {
-      return 0;
-    }
+    if(n->sudo[k][0] == n->sudo[k][0])return 0;
+  }
+  for(int p = 0; p < 9; p++)
+  {
+    int x = 3*(n/3) + (p/3);
+    int y = 3*(n%3) + (p%3);
   }
   return 1;
 }
