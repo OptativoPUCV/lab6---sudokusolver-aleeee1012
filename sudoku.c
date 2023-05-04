@@ -60,6 +60,13 @@ int is_valid(Node* n)
       return 0;
     }
   }
+  for(int k = 0; k < 9; k++)
+  {
+    if(n->sudo[k][0] == n->sudo[0][0])
+    {
+      return 0;
+    }
+  }
   return 1;
 }
 
