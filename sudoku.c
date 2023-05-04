@@ -74,11 +74,20 @@ List* get_adj_nodes(Node* n)
       }
     }
   }
-  
-  Node* up = copy(n);
-  up->sudo[x][y] = up->sudo[x-1][y];
-  up->sudo[x-1][y] = 0;
-  pushBack(list, up);
+  if(x > 0)
+  {
+    Node* up = copy(n);
+    up->sudo[x][y] = up->sudo[x-1][y];
+    up->sudo[x-1][y] = 0;
+    pushBack(list, up);
+  }
+  if(x > n - 1)
+  {
+    Node* dow = copy(n);
+    dow->sudo[x][y] = dow->sudo[x+1][y];
+    dow->sudo[x+1][y] = 0;
+    pushBack(list, dow);
+  }
   return list;
 }
 
