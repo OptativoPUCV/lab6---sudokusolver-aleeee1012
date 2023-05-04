@@ -66,8 +66,7 @@ int is_valid(Node* n)
       {
         if(fila[num1] == 0) fila[num1] = 1;
           
-        else
-          return 0;
+        else return 0;
       }
     }
   }
