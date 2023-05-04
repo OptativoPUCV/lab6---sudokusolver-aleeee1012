@@ -53,7 +53,17 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
-
+  int cont[10] = 0;
+  
+  for(int i = 0; i < n; i++)
+  {
+    for(int k = 0; k < n; k++)
+    {
+      cont[n->sudo[i][k]]++;
+    }
+  }
+  if(cont > 1) return 0;
+  
   return 1;
 }
 
