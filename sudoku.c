@@ -69,7 +69,7 @@ List* get_adj_nodes(Node* n)
       {
         Node *adj_n = (Node*) malloc(sizeof(Node));
         
-        adj_n->sudo = n->sudo;
+        //adj_n->sudo = n->sudo;
         adj_n->sudo[i][k] = move;
         pushBack(list, adj_n);
       }

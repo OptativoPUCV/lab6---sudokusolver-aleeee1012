@@ -32,3 +32,14 @@ sudoku.c:72:21: error: assignment to expression with array type
       |                     ^
 Compilation failed
 4e73efb
+Thu 04 May 2023 03:57:33 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:73:27: error: ‘move’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   73 |         adj_n->sudo[i][k] = move;
+      |         ~~~~~~~~~~~~~~~~~~^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f5f0991
