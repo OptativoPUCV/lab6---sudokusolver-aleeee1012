@@ -126,3 +126,24 @@ sudoku.c:67:25: error: expected ‘;’ before ‘}’ token
       |   ~                      
 Compilation failed
 34e61db
+Thu 04 May 2023 01:31:54 PM UTC: 
+ sudoku.c | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:69:13: error: unused variable ‘y’ [-Werror=unused-variable]
+   69 |         int y = k;
+      |             ^
+sudoku.c:68:13: error: unused variable ‘x’ [-Werror=unused-variable]
+   68 |         int x = i;
+      |             ^
+sudoku.c:75:12: error: ‘x’ undeclared (first use in this function)
+   75 |   up->sudo[x][y] = up->sudo[x-1][y];
+      |            ^
+sudoku.c:75:12: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:75:15: error: ‘y’ undeclared (first use in this function)
+   75 |   up->sudo[x][y] = up->sudo[x-1][y];
+      |               ^
+cc1: all warnings being treated as errors
+Compilation failed
+4f26b35
