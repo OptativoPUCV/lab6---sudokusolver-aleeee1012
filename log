@@ -53,3 +53,22 @@ sudoku.c:73:21: error: assignment to expression with array type
       |                     ^
 Compilation failed
 af46dd5
+Thu 04 May 2023 04:03:52 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:72:29: error: passing argument 1 of ‘copy’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   72 |         adj_n->sudo = copy(n->sudo);
+      |                            ~^~~~~~
+      |                             |
+      |                             int (*)[9]
+sudoku.c:16:18: note: expected ‘Node *’ but argument is of type ‘int (*)[9]’
+   16 | Node* copy(Node* n)
+      |            ~~~~~~^
+sudoku.c:72:21: error: assignment to expression with array type
+   72 |         adj_n->sudo = copy(n->sudo);
+      |                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+aa5d9b3
