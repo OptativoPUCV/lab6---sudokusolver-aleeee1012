@@ -68,9 +68,7 @@ int is_valid(Node* n)
           
         else return 0;
       }
-    }
-    for(int k = 0; k < 9; k++)
-    {
+      
       num2 = n->sudo[i][k];
       if(num2 != 0)
       {
@@ -80,7 +78,6 @@ int is_valid(Node* n)
       }
     }
   }
-
   return 1;
 }
 
