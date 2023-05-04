@@ -58,25 +58,15 @@ int is_valid(Node* n)
 
 List* get_adj_nodes(Node* n)
 {
-  List* list=createList();
-  
-  for(int i = 0; i < 9; i++)
+  List *list = createList();
+  for(int i = 1; i <= 9; i++)
   {
-    for(int k = 0; k < 9; k++)
-    {
-      if(n->sudo[i][k] == 0)
-      {
-        for(int move = 1; move <= 9; move++)
-        {
-          Node *adj_n = (Node*) malloc(sizeof(Node));
-          
-          //adj_n->sudo = copy(n);
-          adj_n->sudo[i][k] = move;
-          pushBack(list, adj_n);  
-        }
-      }
-    }
+    Node *adjN = (Node*) malloc(sizeof(Node));
+    adjN = copy(n);
+
+    pushBack(list, adjN)
   }
+  
   return list;
 }
 
