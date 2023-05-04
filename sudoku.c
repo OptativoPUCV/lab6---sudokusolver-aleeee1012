@@ -53,14 +53,17 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
+  int cont = 0;
   for(int i = 0; i < 9; i++)
   {
-    if(n->sudo[0][i] == n->sudo[0][i])return 0;
+    if(n->sudo[0][i] == n->sudo[0][i]) cont++;
   }
   for(int k = 0; k < 9; k++)
   {
-    if(n->sudo[k][0] == n->sudo[k][0])return 0;
+    if(n->sudo[k][0] == n->sudo[k][0]) cont++;
   }
+
+  if(cont != 0) return 0;
   return 1;
 }
 
@@ -94,8 +97,6 @@ int is_final(Node* n){
 Node* DFS(Node* initial, int* cont){
   return NULL;
 }
-
-
 
 /*
 int main( int argc, char *argv[] ){
