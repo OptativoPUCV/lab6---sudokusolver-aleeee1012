@@ -69,7 +69,7 @@ int is_valid(Node* n)
         else return 0;
       }
       
-      num2 = n->sudo[i][k];
+      num2 = n->sudo[k][i];
       if(num2 != 0)
       {
         if(colu[num2] == 0) colu[num2] = 1;
