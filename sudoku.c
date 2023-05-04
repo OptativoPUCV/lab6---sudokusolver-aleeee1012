@@ -64,14 +64,10 @@ int is_valid(Node* n)
       num1 = n->sudo[i][k];
       if(num1 != 0)
       {
-        if(fila[num1] == 0)
-        {
-          fila[num1] = 1;
-        }
+        if(fila[num1] == 0) fila[num1] = 1;
+          
         else
-        {
           return 0;
-        }
       }
     }
   }
