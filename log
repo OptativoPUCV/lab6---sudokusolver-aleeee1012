@@ -22,3 +22,13 @@ sudoku.c:72:21: error: assignment to expression with array type
 cc1: all warnings being treated as errors
 Compilation failed
 89f01c5
+Thu 04 May 2023 03:57:02 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:72:21: error: assignment to expression with array type
+   72 |         adj_n->sudo = n->sudo;
+      |                     ^
+Compilation failed
+4e73efb

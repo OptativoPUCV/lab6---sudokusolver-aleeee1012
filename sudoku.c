@@ -65,7 +65,7 @@ List* get_adj_nodes(Node* n)
   {
     for(int k = 0; k < 9; k++)
     {
-      if(n->sudo[i][k] == '/0')
+      if(n->sudo[i][k] == '\0')
       {
         Node *adj_n = (Node*) malloc(sizeof(Node));
         
