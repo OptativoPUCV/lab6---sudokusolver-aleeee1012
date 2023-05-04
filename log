@@ -245,3 +245,26 @@ sudoku.c:76:41: error: expected ‘;’ before ‘)’ token
 cc1: all warnings being treated as errors
 Compilation failed
 5dd2573
+Thu 04 May 2023 04:35:57 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:56:7: error: ‘i’ undeclared (first use in this function)
+   56 |   for(i=0;i<9;i++)
+      |       ^
+sudoku.c:56:7: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:58:9: error: ‘j’ undeclared (first use in this function)
+   58 |     for(j=0;j<9;j++)
+      |         ^
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:76:34: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   76 |         for(int num = 1; num <= 9, num++)
+      |                                  ^
+sudoku.c:76:41: error: expected ‘;’ before ‘)’ token
+   76 |         for(int num = 1; num <= 9, num++)
+      |                                         ^
+      |                                         ;
+cc1: all warnings being treated as errors
+Compilation failed
+1acb315

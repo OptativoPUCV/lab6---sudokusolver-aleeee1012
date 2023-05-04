@@ -71,12 +71,12 @@ List* get_adj_nodes(Node* n)
   {
     for(int k = 0; k < 9; k++)
     {
-      if(n->sudo[i][j] == 0)
+      if(n->sudo[i][k] == 0)
       {
         for(int num = 1; num <= 9, num++)
         {
           Node *adjN = copy(n);
-          adjN->sudo[i][j] = num;
+          adjN->sudo[i][k] = num;
           pushBack(list, adjN);
         }
         return list;
