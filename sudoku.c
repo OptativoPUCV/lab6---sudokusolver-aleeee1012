@@ -79,7 +79,7 @@ void print_node(Node* n)
     }
   }
   return 1;
-}*/
+}
 
 int is_valid(Node* n)
 {
@@ -106,9 +106,45 @@ int is_valid(Node* n)
       }
     }
   }
-  
   return 1;
+}*/
+
+int is_valid(Node * n) {
+    int row, col;
+    int nums_in_rows[9][9] = {0}, nums_in_cols[9][9] = {0}, nums_in_subs[9][9] = {0};
+
+    // Recorre la matriz y guarda los números en las estructuras correspondientes
+    for(row = 0; row < 9; row++) {
+        for(col = 0; col < 9; col++) {
+            int num = n->sudo[row][col];
+            int sub = (row/3)*3 + col/3;
+
+            if(num != 0) {
+                // Verifica si el número está repetido en la fila
+                if(nums_in_rows[row][num-1] != 0) {
+                    return 0;
+                }
+                nums_in_rows[row][num-1] = 1;
+
+                // Verifica si el número está repetido en la columna
+                if(nums_in_cols[col][num-1] != 0) {
+                    return 0;
+                }
+                nums_in_cols[col][num-1] = 1;
+
+                // Verifica si el número está repetido en la submatriz de 3x3
+                if(nums_in_subs[sub][num-1] != 0) {
+                    return 0;
+                }
+                nums_in_subs[sub][num-1] = 1;
+            }
+        }
+    }
+
+    // Si no encontramos números repetidos, el estado/nodo es válido
+    return 1;
 }
+
 
 List* get_adj_nodes(Node* n)
 {
