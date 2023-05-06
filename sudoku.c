@@ -52,9 +52,9 @@ void print_node(Node* n)
 
 int is_valid(Node * n)
 {
-  int nums_in_rows[9][9] = {0};
-  int nums_in_cols[9][9] = {0};
-  int nums_in_subs[9][9] = {0};
+  int fila[9][9] = {0};
+  int colu[9][9] = {0};
+  int miniSudo[9][9] = {0};
 
   for(int row = 0; row < 9; row++)
   {
@@ -65,14 +65,14 @@ int is_valid(Node * n)
 
       if(num != 0)
       {
-        if(nums_in_rows[row][num-1] != 0) return 0;
-        nums_in_rows[row][num-1] = 1;
+        if(fila[row][num-1] != 0) return 0;
+        fila[row][num-1] = 1;
 
-        if(nums_in_cols[col][num-1] != 0) return 0;
-        nums_in_cols[col][num-1] = 1;
+        if(colu[col][num-1] != 0) return 0;
+        colu[col][num-1] = 1;
 
-        if(nums_in_subs[sub][num-1] != 0) return 0;
-        nums_in_subs[sub][num-1] = 1;
+        if(miniSudo[sub][num-1] != 0) return 0;
+        miniSudo[sub][num-1] = 1;
       }
     }
   }
