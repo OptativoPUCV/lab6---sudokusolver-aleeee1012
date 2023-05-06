@@ -730,3 +730,23 @@ Sat 06 May 2023 10:42:28 PM UTC:
  tests:  5|3
 total_score: 35/70
 a5d22c1
+Sat 06 May 2023 10:49:45 PM UTC: 
+ sudoku.c | 31 ++++++++++++++++++++++++++++++-
+ 1 file changed, 30 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:98:30: error: expected ‘;’ before ‘if’
+   98 |           num = n->sudo[l][j]
+      |                              ^
+      |                              ;
+   99 |           if(num != 0)
+      |           ~~                  
+sudoku.c:92:11: error: unused variable ‘valor’ [-Werror=unused-variable]
+   92 |       int valor[10] = {0,0,0,0,0,0,0,0,0,0};
+      |           ^~~~~
+sudoku.c:86:7: error: variable ‘num’ set but not used [-Werror=unused-but-set-variable]
+   86 |   int num;
+      |       ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+e3cb7da

@@ -50,7 +50,7 @@ void print_node(Node* n)
   printf("\n");
 }
 
-int is_valid(Node* n)
+/*int is_valid(Node* n)
 {
   int num1, num2;
   
@@ -79,6 +79,35 @@ int is_valid(Node* n)
     }
   }
   return 1;
+}*/
+
+int is_valid(Node* n)
+{
+  int num;
+
+  for(int i = 0; i < 9; i = (i+3))
+  {
+    for(int k = 0; k < 9; k = (k+3))
+    {
+      int valor[10] = {0,0,0,0,0,0,0,0,0,0};
+
+      for(int l = i; l < (i+3); l++)
+      {
+        for(int j = k; j < (k+3); j++)
+        {
+          num = n->sudo[l][j]
+          if(num != 0)
+          {
+            if(valo[num] == 1) return 0;
+
+            else valo[num] = 1;
+          }
+        }
+      }
+    }
+  }
+  
+  return 1;
 }
 
 List* get_adj_nodes(Node* n)
@@ -99,7 +128,6 @@ List* get_adj_nodes(Node* n)
             adjN->sudo[i][k] = num;
             pushBack(list, adjN);          
           }
-  
         }          
         return list;
       }
