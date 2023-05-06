@@ -52,7 +52,7 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
-  int num1, num2; //num3;
+  int num1, num2, num3;
   
   for(int i = 0; i < 9; i++)
   {
@@ -79,9 +79,9 @@ int is_valid(Node* n)
     }
   }
 
-  /*for(int i = 0; i < 9; i++)
+  for(int i = 0; i < 9; i = (i + 1))
   {
-    for(int k = 0; k < 9; k++)
+    for(int k = 0; k < 9; k = (k + 1))
     {
       int valo[10] = {0,0,0,0,0,0,0,0,0,0};
 
@@ -90,11 +90,21 @@ int is_valid(Node* n)
         for(int j = k; j < (k + 3); j++)
         {
           num3 = n->sudo[l][k];
-          if()
+          if(num3 != 0)
+          {
+            if(valo[num3] == 1)
+            {
+              return 0;
+            }
+            else
+            {
+              valo[num3] = 1;
+            }
+          }
         }
       }
     }
-  }*/
+  }
   return 1;
 }
 
