@@ -91,26 +91,16 @@ List* get_adj_nodes(Node* n)
     {
       if(n->sudo[i][k] == 0)
       {
-        if(is_valid(n))
+        for(int num = 1; num <= 9; num++)
         {
-          for(int num = 1; num <= 9; num++)
+          Node *adjN = copy(n);
+          if(is_valid(adjN))
           {
-            Node *adjN = copy(n);
             adjN->sudo[i][k] = num;
-            pushBack(list, adjN);
-            if(is_valid(num)) printf("1");
+            pushBack(list, adjN);          
           }
-        }
-
-        else
-        {
-          for(int num = 1; num <= 9; num++)
-          {
-            Node *adjN = copy(n);
-            adjN->sudo[i][k] = num;
-            pushBack(list, adjN);  
-          }          
-        }
+  
+        }          
         return list;
       }
     }
