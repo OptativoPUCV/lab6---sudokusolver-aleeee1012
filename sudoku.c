@@ -52,7 +52,7 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
-  int num1, num2; //num3;
+  int num1, num2, num3;
   
   for(int i = 0; i < 9; i++)
   {
@@ -79,9 +79,9 @@ int is_valid(Node* n)
     }
   }
 
-  /*for(int a = 0; a < 9; a = (a + 1))
+  for(int a = 0; a < 9; a = (a + 3))
   {
-    for(int t = 0; t < 9; t = (t + 1))
+    for(int t = 0; t < 9; t = (t + 3))
     {
       int valo[10] = {0,0,0,0,0,0,0,0,0,0};
 
@@ -104,7 +104,7 @@ int is_valid(Node* n)
         }
       }
     }
-  }*/
+  }
   return 1;
 }
 
