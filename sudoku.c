@@ -83,7 +83,7 @@ int is_valid(Node* n)
   {
     for(int t = 0; t < 9; t = (t + 3))
     {
-      int valo[10] = {0,0,0,0,0,0,0,0,0,0};
+      //int valo[10] = {0,0,0,0,0,0,0,0,0,0};
 
       for(int l = a; l < (a + 3); l++)
       {
@@ -92,7 +92,7 @@ int is_valid(Node* n)
           num3 = n->sudo[l][j];
           if(num3 != 0)
           {
-            if(valo[num3] == 1)
+            if(fila[num3] == 1 && colu[num3])
             {
               return 0;
             }
@@ -105,6 +105,7 @@ int is_valid(Node* n)
       }
     }
   }
+
   return 1;
 }
 

@@ -631,3 +631,21 @@ Sat 06 May 2023 10:20:12 PM UTC:
  tests:  5|3
 total_score: 35/70
 b009a1b
+Sat 06 May 2023 10:28:57 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:95:16: error: ‘fila’ undeclared (first use in this function)
+   95 |             if(fila[num3] == 1 && colu[num3])
+      |                ^~~~
+sudoku.c:95:16: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:95:35: error: ‘colu’ undeclared (first use in this function)
+   95 |             if(fila[num3] == 1 && colu[num3])
+      |                                   ^~~~
+sudoku.c:101:15: error: ‘valo’ undeclared (first use in this function); did you mean ‘valloc’?
+  101 |               valo[num3] = 1;
+      |               ^~~~
+      |               valloc
+Compilation failed
+4c48d7d
