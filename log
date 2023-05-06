@@ -573,3 +573,15 @@ sudoku.c:125:29: error: character constant too long for its type [-Werror]
 cc1: all warnings being treated as errors
 Compilation failed
 44da57e
+Sat 06 May 2023 10:14:23 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:125:26: error: comparison between pointer and integer [-Werror]
+  125 |           if(is_valid(n) == "return 0")
+      |                          ^~
+sudoku.c:125:26: error: comparison with string literal results in unspecified behavior [-Werror=address]
+cc1: all warnings being treated as errors
+Compilation failed
+74d28ec
