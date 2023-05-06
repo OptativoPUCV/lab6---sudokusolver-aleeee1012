@@ -52,7 +52,7 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
-  int num;
+  int num1, num2, num3;
   
   for(int i = 0; i < 9; i++)
   {
@@ -65,15 +65,21 @@ int is_valid(Node* n)
       //int miniSudo = (i/3)*3 + k/3;
       
       num = n->sudo[i][k];
-      if(num != 0)
+      if(num1 != 0)
       {
-        if(fila[num] == 0) fila[num] = 1;
+        if(fila[num1] == 0) fila[num1] = 1;
         else return 0;
+      }
 
-        if(colu[num] == 0) colu[num] = 1;
+      if(num2 != 0)
+      {
+        if(colu[num2] == 0) colu[num2] = 1;
         else return 0;
+      }
 
-        if(valo[num] == 0) colu[num] = 1;
+      if(num3 != 0)
+      {
+        if(valo[num3] == 0) colu[num3] = 1;
         else return 0;
       }
     }
