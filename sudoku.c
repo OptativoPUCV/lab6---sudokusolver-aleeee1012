@@ -65,22 +65,13 @@ int is_valid(Node * n)
 
       if(num != 0)
       {
-        if(nums_in_rows[row][num-1] != 0)
-        {
-          return 0;
-        }
+        if(nums_in_rows[row][num-1] != 0) return 0;
         nums_in_rows[row][num-1] = 1;
 
-        if(nums_in_cols[col][num-1] != 0)
-        {
-          return 0;
-        }
+        if(nums_in_cols[col][num-1] != 0) return 0;
         nums_in_cols[col][num-1] = 1;
 
-        if(nums_in_subs[sub][num-1] != 0)
-        {
-          return 0;
-        }
+        if(nums_in_subs[sub][num-1] != 0) return 0;
         nums_in_subs[sub][num-1] = 1;
       }
     }
