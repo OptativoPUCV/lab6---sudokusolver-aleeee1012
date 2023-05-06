@@ -55,18 +55,19 @@ int is_valid(Node * n)
   int fila[9][9] = {0};
   int colu[9][9] = {0};
   int miniSudo[9][9] = {0};
+  int num;
 
-  for(int row = 0; row < 9; row++)
+  for(int i = 0; i < 9; i++)
   {
     for(int col = 0; col < 9; col++)
     {
-      int num = n->sudo[row][col];
-      int sub = (row/3)*3 + col/3;
+      num = n->sudo[i][col];
+      int sub = (i/3)*3 + col/3;
 
       if(num != 0)
       {
-        if(fila[row][num-1] != 0) return 0;
-        fila[row][num-1] = 1;
+        if(fila[i][num-1] != 0) return 0;
+        fila[i][num-1] = 1;
 
         if(colu[col][num-1] != 0) return 0;
         colu[col][num-1] = 1;
