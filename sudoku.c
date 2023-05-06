@@ -89,7 +89,7 @@ int is_valid(Node* n)
       {
         for(int j = t; j < (t + 3); j++)
         {
-          num3 = n->sudo[l][k];
+          num3 = n->sudo[l][j];
           if(num3 != 0)
           {
             if(valo[num3] == 1)
