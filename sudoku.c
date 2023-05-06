@@ -64,19 +64,21 @@ int is_valid(Node* n)
     {
       //int miniSudo = (i/3)*3 + k/3;
       
-      num = n->sudo[i][k];
+      num1 = n->sudo[i][k];
       if(num1 != 0)
       {
         if(fila[num1] == 0) fila[num1] = 1;
         else return 0;
       }
 
+      num2 = n->sudo[i][k];
       if(num2 != 0)
       {
         if(colu[num2] == 0) colu[num2] = 1;
         else return 0;
       }
 
+      num3 = n->sudo[i][k];
       if(num3 != 0)
       {
         if(valo[num3] == 0) colu[num3] = 1;
