@@ -562,3 +562,14 @@ Sat 06 May 2023 10:13:14 PM UTC:
  tests:  5|3
 total_score: 35/70
 24e2193
+Sat 06 May 2023 10:14:07 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:125:29: error: character constant too long for its type [-Werror]
+  125 |           if(is_valid(n) == 'return 0')
+      |                             ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+44da57e
