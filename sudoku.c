@@ -50,44 +50,44 @@ void print_node(Node* n)
   printf("\n");
 }
 
-int is_valid(Node* n)
+int is_valid(Node * n)
 {
-  int num1, num2, num3;
-  
-  for(int i = 0; i < 9; i++)
+  int nums_in_rows[9][9] = {0};
+  int nums_in_cols[9][9] = {0};
+  int nums_in_subs[9][9] = {0};
+
+  for(int row = 0; row < 9; row++)
   {
-    int fila[10] = {0,0,0,0,0,0,0,0,0,0};
-    int colu[10] = {0,0,0,0,0,0,0,0,0,0};
-    int valo[10] = {0,0,0,0,0,0,0,0,0,0};
-    
-    for(int k = 0; k < 9; k++)
+    for(int col = 0; col < 9; col++)
     {
-      //int miniSudo = (i/3)*3 + k/3;
-      
-      num1 = n->sudo[i][k];
-      if(num1 != 0)
-      {
-        if(fila[num1] == 0) fila[num1] = 1;
-        else return 0;
-      }
+      int num = n->matrix[row][col];
+      int sub = (row/3)*3 + col/3;
 
-      num2 = n->sudo[i][k];
-      if(num2 != 0)
+      if(num != 0)
       {
-        if(colu[num2] == 0) colu[num2] = 1;
-        else return 0;
-      }
+        if(nums_in_rows[row][num-1] != 0)
+        {
+          return 0;
+        }
+        nums_in_rows[row][num-1] = 1;
 
-      num3 = n->sudo[i][k];
-      if(num3 != 0)
-      {
-        if(valo[num3] == 0) colu[num3] = 1;
-        else return 0;
+        if(nums_in_cols[col][num-1] != 0)
+        {
+          return 0;
+        }
+        nums_in_cols[col][num-1] = 1;
+
+        if(nums_in_subs[sub][num-1] != 0)
+        {
+          return 0;
+        }
+        nums_in_subs[sub][num-1] = 1;
       }
     }
   }
   return 1;
 }
+
 
 List* get_adj_nodes(Node* n)
 {

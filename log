@@ -842,3 +842,13 @@ Sat 06 May 2023 11:10:47 PM UTC:
  tests:  5|3
 total_score: 35/70
 c6594de
+Sat 06 May 2023 11:14:01 PM UTC: 
+ sudoku.c | 39 +++++++++++++++++++--------------------
+ 1 file changed, 19 insertions(+), 20 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:63:18: error: ‘Node’ has no member named ‘matrix’
+   63 |       int num = n->matrix[row][col];
+      |                  ^~
+Compilation failed
+a3ffbf5
