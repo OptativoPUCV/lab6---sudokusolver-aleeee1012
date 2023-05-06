@@ -62,7 +62,7 @@ int is_valid(Node * n)
     for(int k = 0; k < 9; k++)
     {
       num = n->sudo[i][k];
-      int sub = (i/3)*3 + k/3;
+      int subSudo = (i/3)*3 + k/3;
 
       if(num != 0)
       {
@@ -72,8 +72,8 @@ int is_valid(Node * n)
         if(colu[k][num-1] != 0) return 0;
         colu[k][num-1] = 1;
 
-        if(miniSudo[sub][num-1] != 0) return 0;
-        miniSudo[sub][num-1] = 1;
+        if(miniSudo[subSudo][num-1] != 0) return 0;
+        miniSudo[subSudo][num-1] = 1;
       }
     }
   }
