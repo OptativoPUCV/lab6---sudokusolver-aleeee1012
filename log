@@ -708,3 +708,19 @@ Sat 06 May 2023 10:39:07 PM UTC:
  tests:  5|3
 total_score: 35/70
 4f3d5e2
+Sat 06 May 2023 10:40:17 PM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:101:25: error: passing argument 1 of ‘is_valid’ makes pointer from integer without a cast [-Werror=int-conversion]
+  101 |             if(is_valid(num)) printf("1");
+      |                         ^~~
+      |                         |
+      |                         int
+sudoku.c:53:20: note: expected ‘Node *’ but argument is of type ‘int’
+   53 | int is_valid(Node* n)
+      |              ~~~~~~^
+cc1: all warnings being treated as errors
+Compilation failed
+d369a9f

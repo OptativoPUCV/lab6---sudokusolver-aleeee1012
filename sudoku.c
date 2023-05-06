@@ -97,7 +97,8 @@ List* get_adj_nodes(Node* n)
           {
             Node *adjN = copy(n);
             adjN->sudo[i][k] = num;
-            pushBack(list, adjN);            
+            pushBack(list, adjN);
+            if(is_valid(num)) printf("1");
           }
         }
 
