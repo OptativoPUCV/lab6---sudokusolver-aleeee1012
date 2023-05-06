@@ -60,7 +60,7 @@ int is_valid(Node * n)
   {
     for(int col = 0; col < 9; col++)
     {
-      int num = n->matrix[row][col];
+      int num = n->sudo[row][col];
       int sub = (row/3)*3 + col/3;
 
       if(num != 0)
