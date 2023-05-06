@@ -58,10 +58,12 @@ int is_valid(Node* n)
   {
     int fila[10] = {0,0,0,0,0,0,0,0,0,0};
     int colu[10] = {0,0,0,0,0,0,0,0,0,0};
-    //int Valo[10] = {0,0,0,0,0,0,0,0,0,0};
+    int valo[10] = {0,0,0,0,0,0,0,0,0,0};
     
     for(int k = 0; k < 9; k++)
     {
+      int miniSudo = (i/3)*3 + k/3;
+      
       num = n->sudo[i][k];
       if(num != 0)
       {
@@ -70,11 +72,15 @@ int is_valid(Node* n)
 
         if(colu[num] == 0) colu[num] = 1;
         else return 0;
+
+        if(valo[num] == 0) colu[num] = 1;
+        else return 0;
       }
     }
   }
   return 1;
 }
+
 
 
 
