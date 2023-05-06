@@ -79,15 +79,15 @@ int is_valid(Node* n)
     }
   }
 
-  for(int i = 0; i < 9; i = (i + 1))
+  for(int a = 0; a < 9; a = (a + 1))
   {
-    for(int k = 0; k < 9; k = (k + 1))
+    for(int t = 0; t < 9; t = (t + 1))
     {
       int valo[10] = {0,0,0,0,0,0,0,0,0,0};
 
-      for(int l = i; l < (i + 3); l++)
+      for(int l = a; l < (a + 3); l++)
       {
-        for(int j = k; j < (k + 3); j++)
+        for(int j = t; j < (t + 3); j++)
         {
           num3 = n->sudo[l][k];
           if(num3 != 0)
