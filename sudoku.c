@@ -93,7 +93,7 @@ List* get_adj_nodes(Node* n)
       {
         if(is_valid(n))
         {
-          for(int num = 1; num <= 3; num++)
+          for(int num = 1; num <= 9; num++)
           {
             Node *adjN = copy(n);
             adjN->sudo[i][k] = num;
