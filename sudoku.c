@@ -95,7 +95,7 @@ int is_valid(Node* n)
       {
         for(int j = k; j < (k+3); j++)
         {
-          num = n->sudo[l][j]
+          num = n->sudo[l][j];
           if(num != 0)
           {
             if(valo[num] == 1) return 0;

@@ -750,3 +750,19 @@ sudoku.c:86:7: error: variable ‘num’ set but not used [-Werror=unused-but-se
 cc1: all warnings being treated as errors
 Compilation failed
 e3cb7da
+Sat 06 May 2023 10:49:54 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:101:16: error: ‘valo’ undeclared (first use in this function); did you mean ‘valor’?
+  101 |             if(valo[num] == 1) return 0;
+      |                ^~~~
+      |                valor
+sudoku.c:101:16: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:92:11: error: unused variable ‘valor’ [-Werror=unused-variable]
+   92 |       int valor[10] = {0,0,0,0,0,0,0,0,0,0};
+      |           ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+170b80d
