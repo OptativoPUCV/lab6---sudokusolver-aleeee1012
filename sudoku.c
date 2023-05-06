@@ -52,28 +52,23 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
-  int num1, num2;
+  int num;
   
   for(int i = 0; i < 9; i++)
   {
     int fila[10] = {0,0,0,0,0,0,0,0,0,0};
     int colu[10] = {0,0,0,0,0,0,0,0,0,0};
+    int Valo[10] = {0,0,0,0,0,0,0,0,0,0};
     
     for(int k = 0; k < 9; k++)
     {
-      num1 = n->sudo[i][k];
-      if(num1 != 0)
+      num = n->sudo[i][k];
+      if(num != 0)
       {
-        if(fila[num1] == 0) fila[num1] = 1;
-          
+        if(fila[num] == 0) fila[num] = 1;
         else return 0;
-      }
-      
-      num2 = n->sudo[k][i];
-      if(num2 != 0)
-      {
-        if(colu[num2] == 0) colu[num2] = 1;
-          
+
+        if(colu[num] == 0) colu[num] = 1;
         else return 0;
       }
     }
@@ -81,33 +76,6 @@ int is_valid(Node* n)
   return 1;
 }
 
-/*int is_valid(Node* n)
-{
-  int num;
-
-  for(int i = 0; i < 9; i = (i+3))
-  {
-    for(int k = 0; k < 9; k = (k+3))
-    {
-      int valo[10] = {0,0,0,0,0,0,0,0,0,0};
-
-      for(int l = i; l < (i+3); l++)
-      {
-        for(int j = k; j < (k+3); j++)
-        {
-          num = n->sudo[l][j];
-          if(num != 0)
-          {
-            if(valo[num] == 1) return 0;
-
-            else valo[num] = 1;
-          }
-        }
-      }
-    }
-  }
-  return 1;
-}*/
 
 
 List* get_adj_nodes(Node* n)
