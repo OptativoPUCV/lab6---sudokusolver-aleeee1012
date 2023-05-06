@@ -82,7 +82,7 @@ int is_valid(Node* n)
   {
     for(int t = 0; t < 9; t = (t + 3))
     {
-      //int valo[10] = {0,0,0,0,0,0,0,0,0,0};
+      int valo[10] = {0,0,0,0,0,0,0,0,0,0};
 
       for(int l = a; l < (a + 3); l++)
       {

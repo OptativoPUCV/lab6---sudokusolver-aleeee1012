@@ -661,3 +661,14 @@ sudoku.c:100:15: error: ‘valo’ undeclared (first use in this function); did 
 sudoku.c:100:15: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 5686b87
+Sat 06 May 2023 10:30:09 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:85:11: error: variable ‘valo’ set but not used [-Werror=unused-but-set-variable]
+   85 |       int valo[10] = {0,0,0,0,0,0,0,0,0,0};
+      |           ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b935153
