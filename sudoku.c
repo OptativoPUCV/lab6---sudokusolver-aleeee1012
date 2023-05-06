@@ -122,7 +122,7 @@ List* get_adj_nodes(Node* n)
         {
           //Node *adjN = copy(n);
           //adjN->sudo[i][k] = num;
-          if(is_valid(n) == "return 0")
+          if (strcmp(cadena, "return 1") == 0)
           {
             Node *adjN = copy(n);
             adjN->sudo[i][k] = num;

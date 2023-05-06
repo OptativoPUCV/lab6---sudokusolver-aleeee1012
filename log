@@ -585,3 +585,14 @@ sudoku.c:125:26: error: comparison with string literal results in unspecified be
 cc1: all warnings being treated as errors
 Compilation failed
 74d28ec
+Sat 06 May 2023 10:15:12 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:125:22: error: ‘cadena’ undeclared (first use in this function)
+  125 |           if (strcmp(cadena, "return 1") == 0)
+      |                      ^~~~~~
+sudoku.c:125:22: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+8395db0
