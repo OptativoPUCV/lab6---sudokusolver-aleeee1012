@@ -62,7 +62,7 @@ int is_valid(Node* n)
     
     for(int k = 0; k < 9; k++)
     {
-      int miniSudo = (i/3)*3 + k/3;
+      //int miniSudo = (i/3)*3 + k/3;
       
       num = n->sudo[i][k];
       if(num != 0)
@@ -80,9 +80,6 @@ int is_valid(Node* n)
   }
   return 1;
 }
-
-
-
 
 List* get_adj_nodes(Node* n)
 {
