@@ -134,10 +134,13 @@ Node* DFS(Node* initial, int* cont)
       return n;
     }
     
-    List *lista[9] = get_adj_nodes(n);
-    for(int i = 0; lista[i] != NULL; i++)
+    List *lista = get_adj_nodes(n);
+    Node *aux = first(lista);
+    
+    while(aux)
     {
-      push(S, lista[i]);
+      push(S, aux);
+      aux = next(lista);
     }
     free(n);
   }
