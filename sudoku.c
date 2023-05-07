@@ -122,14 +122,6 @@ Node* DFS(Node* initial, int* cont)
 {
   Stack *S = createStack();
   push(S, initial);
-
-  while(cont != 0)
-  {
-    //Node *n = top(S);
-    //if(is_final(n)) return n;
-    prinft("1");
-    
-  }
   
   return NULL;
 }
