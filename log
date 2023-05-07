@@ -908,3 +908,13 @@ sudoku.c:129:8: error: the address of ‘is_final’ will always evaluate as ‘
 cc1: all warnings being treated as errors
 Compilation failed
 8086ef2
+Sun 07 May 2023 12:24:20 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:128:15: error: void value not ignored as it ought to be
+  128 |     Node *n = pop(S);
+      |               ^~~
+Compilation failed
+aa53ec1

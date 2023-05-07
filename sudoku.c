@@ -126,7 +126,7 @@ Node* DFS(Node* initial, int* cont)
   while(S != NULL)
   {
     Node *n = pop(S);
-    if(is_final) return n;
+    if(is_final(n)) return n;
     
   }
   
