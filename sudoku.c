@@ -129,7 +129,7 @@ Node* DFS(Node* initial, int* cont)
       pop(S);
       (*cont)++;
       
-      if(is_final(n))
+      if(!is_final(n))
       {
         return n;
       }
