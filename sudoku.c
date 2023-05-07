@@ -120,8 +120,24 @@ int is_final(Node* n)
 
 Node* DFS(Node* initial, int* cont)
 {
-  
-  return NULL;
+  stack<Node*> S;
+    S.push(initial);
+    while (!S.empty()) {
+        Node* current_node = S.top();
+        S.pop();
+        (*cont)++; // Incrementa el contador en cada iteración
+        if (is_final_state(current_node)) {
+            // Se encontró un estado final, se retorna el nodo
+            return current_node;
+        }
+        Node** adjacent_nodes = get_adjacent_nodes(current_node);
+        for (int i = 0; adjacent_nodes[i] != NULL; i++) {
+            S.push(adjacent_nodes[i]);
+        }
+        free(current_node); // Libera la memoria usada por el nodo
+    }
+    // Si se recorrió todo el grafo sin encontrar una solución, retorna NULL
+    return NULL;
 }
 
 /*
