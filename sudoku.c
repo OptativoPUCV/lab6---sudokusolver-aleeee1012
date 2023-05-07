@@ -131,9 +131,9 @@ Node* DFS(Node* initial, int* cont)
             // Se encontró un estado final, se retorna el nodo
             return current_node;
         }
-        Node** adjacent_nodes = get_adjacent_nodes(current_node);
+        Node** adjacent_nodes = get_adj_nodes(current_node);
         for (int i = 0; adjacent_nodes[i] != NULL; i++) {
-            S.push(adjacent_nodes[i]);
+            push(S, adjacent_nodes[i]);
         }
         free(current_node); // Libera la memoria usada por el nodo
     }

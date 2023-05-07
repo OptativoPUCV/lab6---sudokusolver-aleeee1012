@@ -1279,3 +1279,17 @@ sudoku.c:136:14: error: ‘S’ is a pointer; did you mean to use ‘->’?
 cc1: all warnings being treated as errors
 Compilation failed
 4a00d62
+Sun 07 May 2023 02:24:30 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:134:33: error: initialization of ‘Node **’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  134 |         Node** adjacent_nodes = get_adj_nodes(current_node);
+      |                                 ^~~~~~~~~~~~~
+sudoku.c:124:3: error: ‘S’ is used uninitialized in this function [-Werror=uninitialized]
+  124 |   push(S, initial);
+      |   ^~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d812241
