@@ -124,8 +124,8 @@ Node* DFS(Node* initial, int* cont)
   push(S, initial);
   
     while (!is_empty(S)) {
-        Node* current_node = S.top();
-        S.pop();
+        Node* current_node = top(S);
+        pop(S);
         (*cont)++; // Incrementa el contador en cada iteración
         if (is_final_state(current_node)) {
             // Se encontró un estado final, se retorna el nodo
