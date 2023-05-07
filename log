@@ -1475,3 +1475,22 @@ sudoku.c:137:9: error: variable ‘lista’ set but not used [-Werror=unused-but
 cc1: all warnings being treated as errors
 Compilation failed
 9d0007a
+Sun 07 May 2023 02:39:02 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:138:25: error: invalid use of undefined type ‘struct List’
+  138 |     for(int i = 0; lista[i] != NULL; i++)
+      |                         ^
+sudoku.c:138:20: error: invalid use of incomplete typedef ‘List’
+  138 |     for(int i = 0; lista[i] != NULL; i++)
+      |                    ^~~~~
+sudoku.c:140:20: error: invalid use of undefined type ‘struct List’
+  140 |       push(S, lista[i]);
+      |                    ^
+sudoku.c:140:20: error: invalid use of incomplete typedef ‘List’
+  140 |       push(S, lista[i]);
+      |               ~~~~~^~~
+Compilation failed
+dad1139
