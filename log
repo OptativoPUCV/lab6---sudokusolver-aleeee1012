@@ -918,3 +918,17 @@ sudoku.c:128:15: error: void value not ignored as it ought to be
       |               ^~~
 Compilation failed
 aa53ec1
+Sun 07 May 2023 12:54:43 AM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+test.c: In function ‘test_dfs’:
+test.c:206:19: error: implicit declaration of function ‘DFS’ [-Werror=implicit-function-declaration]
+  206 |     Node* final = DFS(initial, &cont);
+      |                   ^~~
+test.c:206:19: error: initialization of ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+test.c:230:11: error: assignment to ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  230 |     final = DFS(initial, &cont);
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+24877eb

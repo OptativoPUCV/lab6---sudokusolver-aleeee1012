@@ -118,20 +118,20 @@ int is_final(Node* n)
   return 1;
 }
 
-Node* DFS(Node* initial, int* cont)
+/*Node* DFS(Node* initial, int* cont)
 {
   Stack *S = createStack();
   push(S, initial);
 
   while(S != NULL)
   {
-    Node *n = pop(S);
+    Node *n = top(S);
     if(is_final(n)) return n;
     
   }
   
   return NULL;
-}
+}*/
 
 /*
 int main( int argc, char *argv[] ){
