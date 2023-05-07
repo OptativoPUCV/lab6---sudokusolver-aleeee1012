@@ -1455,3 +1455,23 @@ list.h:32:27: note: expected ‘void *’ but argument is of type ‘Node’
 cc1: all warnings being treated as errors
 Compilation failed
 19a10da
+Sun 07 May 2023 02:38:03 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:137:17: error: initialization of ‘int’ from ‘List *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  137 |     int lista = get_adj_nodes(n);
+      |                 ^~~~~~~~~~~~~
+sudoku.c:138:25: error: subscripted value is neither array nor pointer nor vector
+  138 |     for(int i = 0; lista[i] != NULL; i++)
+      |                         ^
+sudoku.c:140:20: error: subscripted value is neither array nor pointer nor vector
+  140 |       push(S, lista[i]);
+      |                    ^
+sudoku.c:137:9: error: variable ‘lista’ set but not used [-Werror=unused-but-set-variable]
+  137 |     int lista = get_adj_nodes(n);
+      |         ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9d0007a
