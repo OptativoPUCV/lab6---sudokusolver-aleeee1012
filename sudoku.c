@@ -131,7 +131,7 @@ Node* DFS(Node* initial, int* cont)
             // Se encontró un estado final, se retorna el nodo
             return current_node;
         }
-        Node** adjacent_nodes = get_adj_nodes(current_node);
+        Node* adjacent_nodes = get_adj_nodes(current_node);
         for (int i = 0; adjacent_nodes[i] != NULL; i++) {
             push(S, adjacent_nodes[i]);
         }

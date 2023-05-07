@@ -1304,3 +1304,28 @@ sudoku.c:134:33: error: initialization of ‘Node **’ from incompatible pointe
 cc1: all warnings being treated as errors
 Compilation failed
 2c86ec0
+Sun 07 May 2023 02:26:26 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:134:32: error: initialization of ‘Node *’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  134 |         Node* adjacent_nodes = get_adj_nodes(current_node);
+      |                                ^~~~~~~~~~~~~
+sudoku.c:135:43: error: invalid operands to binary != (have ‘Node’ and ‘void *’)
+  135 |         for (int i = 0; adjacent_nodes[i] != NULL; i++) {
+      |                         ~~~~~~~~~~~~~~~~~ ^~
+      |                                       |
+      |                                       Node
+sudoku.c:136:35: error: incompatible type for argument 2 of ‘push’
+  136 |             push(S, adjacent_nodes[i]);
+      |                     ~~~~~~~~~~~~~~^~~
+      |                                   |
+      |                                   Node
+In file included from test.c:4:
+list.h:32:27: note: expected ‘void *’ but argument is of type ‘Node’
+   32 | void push(Stack* s, void* data);
+      |                     ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+bc75738
