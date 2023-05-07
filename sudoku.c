@@ -120,7 +120,7 @@ int is_final(Node* n)
 
 Node* DFS(Node* initial, int* cont)
 {
-  stack<Node*> S;
+  Stack * S;
     S.push(initial);
     while (!S.empty()) {
         Node* current_node = S.top();

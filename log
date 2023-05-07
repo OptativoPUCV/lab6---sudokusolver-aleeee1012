@@ -1112,3 +1112,42 @@ sudoku.c:133:33: error: initialization of ‘Node **’ from ‘int’ makes poi
 cc1: all warnings being treated as errors
 Compilation failed
 d2d59d8
+Sun 07 May 2023 02:21:49 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:124:6: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  124 |     S.push(initial);
+      |      ^
+      |      ->
+sudoku.c:125:14: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  125 |     while (!S.empty()) {
+      |              ^
+      |              ->
+sudoku.c:126:31: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  126 |         Node* current_node = S.top();
+      |                               ^
+      |                               ->
+sudoku.c:127:10: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  127 |         S.pop();
+      |          ^
+      |          ->
+sudoku.c:129:13: error: implicit declaration of function ‘is_final_state’ [-Werror=implicit-function-declaration]
+  129 |         if (is_final_state(current_node)) {
+      |             ^~~~~~~~~~~~~~
+sudoku.c:133:33: error: implicit declaration of function ‘get_adjacent_nodes’; did you mean ‘get_adj_nodes’? [-Werror=implicit-function-declaration]
+  133 |         Node** adjacent_nodes = get_adjacent_nodes(current_node);
+      |                                 ^~~~~~~~~~~~~~~~~~
+      |                                 get_adj_nodes
+sudoku.c:133:33: error: initialization of ‘Node **’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:135:14: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  135 |             S.push(adjacent_nodes[i]);
+      |              ^
+      |              ->
+sudoku.c:123:11: error: variable ‘S’ set but not used [-Werror=unused-but-set-variable]
+  123 |   Stack * S;
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+b505d81
