@@ -1293,3 +1293,14 @@ sudoku.c:124:3: error: ‘S’ is used uninitialized in this function [-Werror=u
 cc1: all warnings being treated as errors
 Compilation failed
 d812241
+Sun 07 May 2023 02:26:12 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:134:33: error: initialization of ‘Node **’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  134 |         Node** adjacent_nodes = get_adj_nodes(current_node);
+      |                                 ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2c86ec0
