@@ -118,7 +118,18 @@ int is_final(Node* n)
   return 1;
 }
 
-Node* DFS(Node* initial, int* cont){
+Node* DFS(Node* initial, int* cont)
+{
+  Stack *S = createStack();
+  push(S, initial);
+
+  while(S != NULL)
+  {
+    Node *n = pop(S);
+    if(is_final) return n;
+    
+  }
+  
   return NULL;
 }
 

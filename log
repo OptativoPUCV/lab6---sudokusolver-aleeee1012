@@ -894,3 +894,17 @@ Sat 06 May 2023 11:34:55 PM UTC:
  tests:  7|1
 total_score: 55/70
 32388ef
+Sun 07 May 2023 12:24:03 AM UTC: 
+ sudoku.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:128:15: error: void value not ignored as it ought to be
+  128 |     Node *n = pop(S);
+      |               ^~~
+sudoku.c:129:8: error: the address of ‘is_final’ will always evaluate as ‘true’ [-Werror=address]
+  129 |     if(is_final) return n;
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+8086ef2
