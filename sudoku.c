@@ -122,7 +122,8 @@ Node* DFS(Node* initial, int* cont)
 {
   Stack * S;
   push(S, initial);
-    while (!S.empty()) {
+  
+    while (!empty(S)) {
         Node* current_node = S.top();
         S.pop();
         (*cont)++; // Incrementa el contador en cada iteración

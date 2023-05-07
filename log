@@ -1183,3 +1183,34 @@ sudoku.c:135:14: error: ‘S’ is a pointer; did you mean to use ‘->’?
 cc1: all warnings being treated as errors
 Compilation failed
 1b54cfa
+Sun 07 May 2023 02:22:22 AM UTC: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:13: error: implicit declaration of function ‘empty’ [-Werror=implicit-function-declaration]
+  126 |     while (!empty(S)) {
+      |             ^~~~~
+sudoku.c:127:31: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  127 |         Node* current_node = S.top();
+      |                               ^
+      |                               ->
+sudoku.c:128:10: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  128 |         S.pop();
+      |          ^
+      |          ->
+sudoku.c:130:13: error: implicit declaration of function ‘is_final_state’ [-Werror=implicit-function-declaration]
+  130 |         if (is_final_state(current_node)) {
+      |             ^~~~~~~~~~~~~~
+sudoku.c:134:33: error: implicit declaration of function ‘get_adjacent_nodes’; did you mean ‘get_adj_nodes’? [-Werror=implicit-function-declaration]
+  134 |         Node** adjacent_nodes = get_adjacent_nodes(current_node);
+      |                                 ^~~~~~~~~~~~~~~~~~
+      |                                 get_adj_nodes
+sudoku.c:134:33: error: initialization of ‘Node **’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:136:14: error: ‘S’ is a pointer; did you mean to use ‘->’?
+  136 |             S.push(adjacent_nodes[i]);
+      |              ^
+      |              ->
+cc1: all warnings being treated as errors
+Compilation failed
+cfc7906
