@@ -1367,3 +1367,32 @@ Sun 07 May 2023 02:31:04 AM UTC:
  tests:  7|1
 total_score: 55/70
 1e4043c
+Sun 07 May 2023 02:35:49 AM UTC: 
+ sudoku.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:137:5: error: variable ‘lista’ has initializer but incomplete type
+  137 |     List lista = get_adj_nodes(n)
+      |     ^~~~
+sudoku.c:137:10: error: storage size of ‘lista’ isn’t known
+  137 |     List lista = get_adj_nodes(n)
+      |          ^~~~~
+sudoku.c:138:5: error: expected ‘,’ or ‘;’ before ‘for’
+  138 |     for(int i = 0; lista[i] != NULL; i++)
+      |     ^~~
+sudoku.c:138:26: error: ‘i’ undeclared (first use in this function)
+  138 |     for(int i = 0; lista[i] != NULL; i++)
+      |                          ^
+sudoku.c:138:26: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:138:41: error: expected ‘;’ before ‘)’ token
+  138 |     for(int i = 0; lista[i] != NULL; i++)
+      |                                         ^
+      |                                         ;
+sudoku.c:138:41: error: expected statement before ‘)’ token
+sudoku.c:137:10: error: unused variable ‘lista’ [-Werror=unused-variable]
+  137 |     List lista = get_adj_nodes(n)
+      |          ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7f94279

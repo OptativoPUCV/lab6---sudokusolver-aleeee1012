@@ -123,22 +123,29 @@ Node* DFS(Node* initial, int* cont)
   Stack * S = createStack();
   push(S, initial);
   
-    while (!is_empty(S))
-    {
-      Node *n = top(S);
-      pop(S);
-      (*cont)++;
+  while (!is_empty(S))
+  {
+    Node *n = top(S);
+    pop(S);
+    (*cont)++;
       
-      if(is_final(n))
-      {
-        return n;
-      }
+    if(is_final(n))
+    {
+      return n;
+    }
+    
+    List lista = get_adj_nodes(n)
+    for(int i = 0; lista[i] != NULL; i++)
+    {
+      push(S, lista[i]);
+    }
+    
         //Node* adjacent_nodes = get_adj_nodes(current_node);
         /*for (int i = 0; adjacent_nodes[i] != NULL; i++) {
             push(S, adjacent_nodes[i]);
         }*/
-      free(n);
-    }
+    free(n);
+  }
   return NULL;
 }
 
