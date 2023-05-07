@@ -1430,3 +1430,28 @@ sudoku.c:140:20: error: invalid use of incomplete typedef ‘List’
       |               ~~~~~^~~
 Compilation failed
 56e0444
+Sun 07 May 2023 02:36:30 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:137:19: error: initialization of ‘Node *’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  137 |     Node *lista = get_adj_nodes(n);
+      |                   ^~~~~~~~~~~~~
+sudoku.c:138:29: error: invalid operands to binary != (have ‘Node’ and ‘void *’)
+  138 |     for(int i = 0; lista[i] != NULL; i++)
+      |                    ~~~~~~~~ ^~
+      |                         |
+      |                         Node
+sudoku.c:140:20: error: incompatible type for argument 2 of ‘push’
+  140 |       push(S, lista[i]);
+      |               ~~~~~^~~
+      |                    |
+      |                    Node
+In file included from test.c:4:
+list.h:32:27: note: expected ‘void *’ but argument is of type ‘Node’
+   32 | void push(Stack* s, void* data);
+      |                     ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+19a10da
