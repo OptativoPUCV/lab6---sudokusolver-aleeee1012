@@ -123,22 +123,23 @@ Node* DFS(Node* initial, int* cont)
   Stack * S = createStack();
   push(S, initial);
   
-    while (!is_empty(S)) {
-        Node* current_node = top(S);
-        pop(S);
-        (*cont)++; // Incrementa el contador en cada iteración
-        if (is_final(current_node)) {
-            // Se encontró un estado final, se retorna el nodo
-            return current_node;
-        }
+    while (!is_empty(S))
+    {
+      Node *n = top(S);
+      pop(S);
+      (*cont)++;
+      
+      if(is_final(n))
+      {
+        return n;
+      }
         //Node* adjacent_nodes = get_adj_nodes(current_node);
         /*for (int i = 0; adjacent_nodes[i] != NULL; i++) {
             push(S, adjacent_nodes[i]);
         }*/
-        free(current_node); // Libera la memoria usada por el nodo
+      free(n);
     }
-    // Si se recorrió todo el grafo sin encontrar una solución, retorna NULL
-    return NULL;
+  return NULL;
 }
 
 /*
