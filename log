@@ -992,3 +992,24 @@ sudoku.c:128:11: error: variable ‘n’ set but not used [-Werror=unused-but-se
 cc1: all warnings being treated as errors
 Compilation failed
 358dc29
+Sun 07 May 2023 02:03:37 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:9: error: implicit declaration of function ‘size’ [-Werror=implicit-function-declaration]
+  126 |   while(size(S) != 0)
+      |         ^~~~
+sudoku.c:128:15: error: void value not ignored as it ought to be
+  128 |     Node *n = pop(S);
+      |               ^~~
+sudoku.c:130:9: error: ‘Node’ has no member named ‘visited’
+  130 |     if(n->visited == true) continue;
+      |         ^~
+sudoku.c:130:22: error: ‘true’ undeclared (first use in this function)
+  130 |     if(n->visited == true) continue;
+      |                      ^~~~
+sudoku.c:130:22: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+b7c486f

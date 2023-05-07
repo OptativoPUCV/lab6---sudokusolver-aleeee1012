@@ -127,7 +127,7 @@ Node* DFS(Node* initial, int* cont)
   {
     Node *n = pop(S);
 
-    if(n.visited == true) continue;
+    if(n->visited == true) continue;
   }
   
   return NULL;
