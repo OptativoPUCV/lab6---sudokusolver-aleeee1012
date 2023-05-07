@@ -1013,3 +1013,44 @@ sudoku.c:130:22: note: each undeclared identifier is reported only once for each
 cc1: all warnings being treated as errors
 Compilation failed
 b7c486f
+Sun 07 May 2023 02:12:23 AM UTC: 
+ sudoku.c | 69 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 68 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:139:3: error: unknown type name ‘bool’
+  139 |   bool visited[9][9] = {false};
+      |   ^~~~
+sudoku.c:139:25: error: ‘false’ undeclared (first use in this function); did you mean ‘fclose’?
+  139 |   bool visited[9][9] = {false};
+      |                         ^~~~~
+      |                         fclose
+sudoku.c:139:25: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:142:9: error: implicit declaration of function ‘size’ [-Werror=implicit-function-declaration]
+  142 |   while(size(S) != 0)
+      |         ^~~~
+sudoku.c:144:15: error: void value not ignored as it ought to be
+  144 |     Node *n = pop(S);
+      |               ^~~
+sudoku.c:149:51: error: ‘true’ undeclared (first use in this function)
+  149 |       visited[n->sudo[0][0]-1][n->sudo[0][1]-1] = true;
+      |                                                   ^~~~
+sudoku.c: In function ‘main’:
+sudoku.c:196:3: error: ‘cout’ undeclared (first use in this function); did you mean ‘count’?
+  196 |   cout << "Número de nodos visitados: " << count << endl;
+      |   ^~~~
+      |   count
+sudoku.c:196:54: error: ‘endl’ undeclared (first use in this function)
+  196 |   cout << "Número de nodos visitados: " << count << endl;
+      |                                                     ^~~~
+test.c: At top level:
+test.c:245:5: error: redefinition of ‘main’
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:5:
+sudoku.c:182:5: note: previous definition of ‘main’ was here
+  182 | int main() {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+de293fd

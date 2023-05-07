@@ -118,20 +118,87 @@ int is_final(Node* n)
   return 1;
 }
 
-Node* DFS(Node* initial, int* cont)
+/*Node* DFS(Node* initial, int* cont)
 {
   Stack *S = createStack();
+  bool visited = false;
   push(S, initial);
 
   while(size(S) != 0)
   {
     Node *n = pop(S);
 
-    if(n->visited == true) continue;
   }
   
   return NULL;
+}*/
+
+Node* DFS(Node* initial, int* cont)
+{
+  Stack *S = createStack();
+  bool visited[9][9] = {false};
+  push(S, initial);
+
+  while(size(S) != 0)
+  {
+    Node *n = pop(S);
+    
+    // Si el nodo aún no ha sido visitado, lo marcamos como visitado y lo procesamos
+    if (!visited[n->sudo[0][0]-1][n->sudo[0][1]-1]) {
+      // Marcar el nodo actual como visitado
+      visited[n->sudo[0][0]-1][n->sudo[0][1]-1] = true;
+  
+      // Incrementar el contador de nodos visitados
+      (*cont)++;
+  
+      // Aquí se puede realizar cualquier acción necesaria con el nodo actual, como verificar si es una solución válida
+      
+      // Recorrer los vecinos del nodo actual y agregarlos al stack si aún no han sido visitados
+      // En este caso, los vecinos serían los posibles movimientos válidos en el sudoku
+      for (int i = 1; i <= 9; i++) {
+        if (!visited[n->sudo[0][0]-1][i-1]) {
+          Node* neighbor = (Node*) malloc(sizeof(Node));
+          memcpy(neighbor, n, sizeof(Node));
+          neighbor->sudo[0][1] = i;
+          push(S, neighbor);
+        }
+        if (!visited[i-1][n->sudo[0][1]-1]) {
+          Node* neighbor = (Node*) malloc(sizeof(Node));
+          memcpy(neighbor, n, sizeof(Node));
+          neighbor->sudo[0][0] = i;
+          push(S, neighbor);
+        }
+      }
+      
+      // Devolver el puntero al último nodo visitado
+      return n;
+    }
+  }
+  
+  // Si no se encontró ningún nodo sin visitar en el stack, se devuelve NULL
+  return NULL;
 }
+
+int main() {
+  // Crear un tablero de sudoku de ejemplo
+  Node* initial = (Node*) malloc(sizeof(Node));
+  initial->sudo[0][0] = 5;
+  initial->sudo[0][1] = 3;
+  // Resto del tablero...
+  
+  // Inicializar el contador de nodos visitados
+  int count = 0;
+  
+  // Realizar la búsqueda en profundidad desde el nodo inicial
+  Node* lastVisited = DFS(initial, &count);
+  
+  // Imprimir el número de nodos visitados y el último nodo visitado
+  cout << "Número de nodos visitados: " << count << endl;
+  cout << "Último nodo visitado: (" << lastVisited->sudo[0][0] << ", " << lastVisited->sudo[0][1] << ")" << endl;
+  
+  return 0;
+}
+
 
 /*
 int main( int argc, char *argv[] ){
