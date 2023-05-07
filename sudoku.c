@@ -179,27 +179,6 @@ Node* DFS(Node* initial, int* cont)
   return NULL;
 }
 
-int main() {
-  // Crear un tablero de sudoku de ejemplo
-  Node* initial = (Node*) malloc(sizeof(Node));
-  initial->sudo[0][0] = 5;
-  initial->sudo[0][1] = 3;
-  // Resto del tablero...
-  
-  // Inicializar el contador de nodos visitados
-  int count = 0;
-  
-  // Realizar la búsqueda en profundidad desde el nodo inicial
-  Node* lastVisited = DFS(initial, &count);
-  
-  // Imprimir el número de nodos visitados y el último nodo visitado
-  cout << "Número de nodos visitados: " << count << endl;
-  cout << "Último nodo visitado: (" << lastVisited->sudo[0][0] << ", " << lastVisited->sudo[0][1] << ")" << endl;
-  
-  return 0;
-}
-
-
 /*
 int main( int argc, char *argv[] ){
 
