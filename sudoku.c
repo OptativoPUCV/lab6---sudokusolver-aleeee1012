@@ -122,6 +122,13 @@ Node* DFS(Node* initial, int* cont)
 {
   Stack *S = createStack();
   push(S, initial);
+
+  while(size(S) != 0)
+  {
+    Node *n = pop(S);
+
+    if(n.visited == true) continue;
+  }
   
   return NULL;
 }
