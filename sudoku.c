@@ -132,9 +132,9 @@ Node* DFS(Node* initial, int* cont)
             return current_node;
         }
         Node* adjacent_nodes = get_adj_nodes(current_node);
-        for (int i = 0; adjacent_nodes[i] != NULL; i++) {
+        /*for (int i = 0; adjacent_nodes[i] != NULL; i++) {
             push(S, adjacent_nodes[i]);
-        }
+        }*/
         free(current_node); // Libera la memoria usada por el nodo
     }
     // Si se recorrió todo el grafo sin encontrar una solución, retorna NULL

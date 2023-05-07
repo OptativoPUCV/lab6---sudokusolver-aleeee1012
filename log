@@ -1329,3 +1329,17 @@ list.h:32:27: note: expected ‘void *’ but argument is of type ‘Node’
 cc1: all warnings being treated as errors
 Compilation failed
 bc75738
+Sun 07 May 2023 02:27:20 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:134:32: error: initialization of ‘Node *’ from incompatible pointer type ‘List *’ [-Werror=incompatible-pointer-types]
+  134 |         Node* adjacent_nodes = get_adj_nodes(current_node);
+      |                                ^~~~~~~~~~~~~
+sudoku.c:134:15: error: unused variable ‘adjacent_nodes’ [-Werror=unused-variable]
+  134 |         Node* adjacent_nodes = get_adj_nodes(current_node);
+      |               ^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e642475
