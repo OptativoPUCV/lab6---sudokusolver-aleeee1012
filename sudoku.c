@@ -120,15 +120,15 @@ int is_final(Node* n)
 
 Node* DFS(Node* initial, int* cont)
 {
-  /*Stack *S = createStack();
+  Stack *S = createStack();
   push(S, initial);
 
-  while(S != NULL)
+  while(cont != 0)
   {
     Node *n = top(S);
-    if(is_final(n)) return n;
+    //if(is_final(n)) return n;
     
-  }*/
+  }
   
   return NULL;
 }
